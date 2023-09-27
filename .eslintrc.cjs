@@ -8,7 +8,9 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier/skip-formatting'
+      
   ],
+  "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }],
   parserOptions: {
     ecmaVersion: 'latest'
   }

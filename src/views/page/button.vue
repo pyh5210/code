@@ -1,5 +1,5 @@
 <template>
-    <el-button></el-button>
+    <el-button :tag="tag"></el-button>
 </template>
 
 <script lang="ts">

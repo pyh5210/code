@@ -1,12 +1,12 @@
 <template>
-    <el-text :tag="tag" :truncated="truncated" :class="class">{{ solt }}</el-text>
+    <el-text :class="class" :tag="tag" :truncated="truncated" > {{ solt }} </el-text>
 </template>
 
 <script lang="ts">
-export default {
-    props:['tag', 'truncated', 'solt','class']
-}
 
+export default {
+    props:['tag','truncated', 'solt','class']
+}
 </script>
 
 <style>

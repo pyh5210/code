@@ -1,13 +1,8 @@
-<script setup lang="ts">
-import InputView from '@/views/page/input.vue'
-import TextView from '@/views/page/text.vue'
-</script>
-
 <template>
   <div class="login-container">
     <el-form class="login_from" style="width: 350px;">
 
-      <TextView class="word" tag="b" truncated="false" size="30"  solt="vue3-element-admin"/>
+      <TextView class="word" tag="b" truncated="false" size="30"  solt="vue3-element-admin" />
 
       <InputView solt="prefix" class="login_input" placeholder="admin" size:="20" color="#ffffff" icon="Avatar"  input="sss"/>
 
@@ -20,6 +15,10 @@ import TextView from '@/views/page/text.vue'
 </template>
 
 <script lang="ts">
+
+import InputView from '@/views/page/input.vue'
+import TextView from '@/views/page/text.vue'
+
 export default {
   components: {
     InputView,

@@ -1,29 +1,28 @@
 <template>
+    <el-input v-if="show === false" :class="class" :type="type" :placeholder="placeholder" v-model="value">
+        <template v-slot:[solt]>
+            <el-icon :size="size" :color="color">
+                <component :is="icon"></component></el-icon>
+        </template>
 
-  <el-input v-if="show === false" :class="class" :type="type" :placeholder="placeholder" v-model="value">
-    <template v-slot:[solt]>
-        <el-icon :size="size" :color="color">
-            <component :is="icon"></component></el-icon>
-    </template>
+        <template #append v-if=" type == 'captcha'">
+            <div class="captcha" >
+                <img :src="src" @click="getimage" style="margin-top: 10px;">
+            </div>
+        </template >
+    </el-input>
 
-    <template #append v-if=" type == 'captcha'">
-        <div class="captcha" >
-            <img :src="src" @click="getimage" style="margin-top: 10px;">
-        </div>
-    </template >
-  </el-input>
+    <el-input v-else="show === true"  show-password :class="class" :type="type" :placeholder="placeholder" v-model="value">
+        <template v-slot:[solt]>
+            <el-icon :size="size" :color="color">
+                <component :is="icon"></component></el-icon>
+        </template>
 
-  <el-input v-else="show === true"  show-password :class="class" :type="type" :placeholder="placeholder" v-model="value">
-    <template v-slot:[solt]>
-        <el-icon :size="size" :color="color">
-            <component :is="icon"></component></el-icon>
-    </template>
-
-    
-  </el-input>
-
+        
+    </el-input>
+  
 </template>
-
+  
 <script lang="ts" >
 import { getCaptcha } from '@/api/api'
 
@@ -73,4 +72,3 @@ export default {
     color: #ffffff;
 }
 </style>
-
