@@ -1,19 +1,32 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-
+  padding: 0;
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+:root{
+    --el-font-size-base:16px!important
 }
+
+
+
+.login_from > div {
+    margin: 12px 0;
+    height: 40px;
+}
+.el-input__inner{
+    padding: 20px 0;
+}
+
+
+
+
+
+
+
+
 
 @media (hover: hover) {
   a:hover {
@@ -29,7 +42,7 @@ a,
 
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    grid-template-columns: 1fr;
+    padding: 0;
   }
 }
