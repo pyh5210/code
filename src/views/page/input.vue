@@ -1,5 +1,5 @@
 <template>
-    <el-input v-if="show === false" :class="class" :type="type" :placeholder="placeholder" v-model="value">
+    <el-input v-if="show === false" :class="style" :type="type" :placeholder="placeholder" v-model="value">
         <template v-slot:[solt]>
             <el-icon :size="size" :color="color">
                 <component :is="icon"></component></el-icon>
@@ -7,12 +7,12 @@
 
         <template #append v-if=" type == 'captcha'">
             <div class="captcha" >
-                <img :src="src" @click="getimage" style="margin-top: 10px;">
+                <img :src="src" @click="getimage" style="margin-top: 10px;width: 130px;">
             </div>
         </template >
     </el-input>
 
-    <el-input v-else="show === true"  show-password :class="class" :type="type" :placeholder="placeholder" v-model="value">
+    <el-input v-else="show === true"  show-password :class="style" :type="type" :placeholder="placeholder" v-model="value">
         <template v-slot:[solt]>
             <el-icon :size="size" :color="color">
                 <component :is="icon"></component></el-icon>
@@ -27,12 +27,13 @@
 import { getCaptcha } from '@/api/api'
 
 export default {
-    props: ['placeholder','size','color','icon','type','class','solt','input'],
+    props: ['placeholder','size','color','icon','type','style','solt','input'],
     data(){
         return {
             value: '',
             show: false,
-            src: ''
+            src: '',
+            class: 'ssss'
         }
     },
     mounted() {
@@ -58,6 +59,7 @@ export default {
 /* 登录页 */
 .login-container .login_input .el-input-group__append{
     width: 150px;
+    background-color: #ffffff;
 }
 
 .login-container .el-input__wrapper{

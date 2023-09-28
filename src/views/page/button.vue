@@ -1,10 +1,22 @@
 <template>
-    <el-button :tag="tag"></el-button>
+    <el-button 
+        :class="class"
+        :type="type"
+        :tag="tag"
+    >
+    {{ solt }}
+    </el-button>
 </template>
 
 <script lang="ts">
 export default {
-    props:['tag', 'truncated', 'solt','class']
+    props:['tag', 'type', 'solt','class']
 }
 
 </script>
+<style>
+/* 登录页 */
+.login-container .login{
+    width: 100%;
+}
+</style>
